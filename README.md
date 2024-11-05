@@ -1,3 +1,3 @@
 # examen1_programacion_movil
 
-A new Flutter project.
+Nuevo proyecto del Examen 1 Programacion Movil.
