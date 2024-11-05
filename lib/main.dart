@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'presentation/pages/lista_tareas_page.dart'; // Asegúrate de que esta ruta sea correcta
-import 'presentation/pages/noticias_page.dart'; // Importa otras páginas que necesites
+import 'presentation/pages/lista_tareas_page.dart';
+import 'presentation/pages/noticias_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,13 +22,12 @@ class MyApp extends StatelessWidget {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => HomePage(), // Cambia esto por tu página principal
+        builder: (context, state) => HomePage(),
       ),
       GoRoute(
         path: '/lista_tareas',
         builder: (context, state) => ListaTareasPage(),
       ),
-      // Agrega más rutas aquí si es necesario
     ],
   );
 }
@@ -43,7 +42,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            // Navegar a la página de lista de tareas
+          
             context.go('/lista_tareas');
           },
           child: Text('Ir a Lista de Tareas'),
