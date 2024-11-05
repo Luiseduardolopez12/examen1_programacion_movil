@@ -12,7 +12,6 @@ class _ListaTareasPageState extends State<ListaTareasPage> {
   @override
   void initState() {
     super.initState();
-    // Inicializar la carga de tareas al iniciar la pantalla
     _tasks = TaskRepository().loadTasks();
   }
 
@@ -32,7 +31,6 @@ class _ListaTareasPageState extends State<ListaTareasPage> {
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
             return Center(child: Text('No hay tareas disponibles.'));
           } else {
-            // Mostrar las tareas en una lista
             return ListView.builder(
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
