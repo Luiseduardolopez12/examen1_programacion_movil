@@ -7,7 +7,6 @@ class Task {
 
   Task({required this.id, required this.nombre});
 
-  // Método para convertir JSON a un objeto Task
   factory Task.fromJson(Map<String, dynamic> json) {
     return Task(
       id: json['id'],
@@ -17,13 +16,9 @@ class Task {
 }
 
 class TaskRepository {
-  // Método para cargar las tareas desde el archivo JSON
   Future<List<Task>> loadTasks() async {
-    // Cargar el contenido de 'tasks.json' desde los assets
     final String response = await rootBundle.loadString('assets/tasks.json');
-    // Decodificar el JSON
     final List<dynamic> data = json.decode(response);
-    // Convertir cada elemento del JSON en una instancia de Task
     return data.map((json) => Task.fromJson(json)).toList();
   }
 }
